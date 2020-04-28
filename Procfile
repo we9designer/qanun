@@ -1,2 +1,3 @@
-web: gunicorn qanun.wsgi
---log-file -
+web: gunicorn qanun.wsgi:application --log-file - --log-level debug
+python manage.py collectstatic --noinput
+manage.py migrate
