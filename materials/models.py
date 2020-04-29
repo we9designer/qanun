@@ -2,12 +2,13 @@ from django.db import models
 from taggit.managers import TaggableManager
 from django.urls import reverse
 from django.contrib.auth.models import User
+from ckeditor.fields import RichTextField
 
 
 class Material(models.Model):
-    user = models.ForeignKey(User, verbose_name='User', related_name='users', on_delete=models.CASCADE, null=True)
+    # user = models.ForeignKey(User, verbose_name='User', related_name='users', on_delete=models.CASCADE, null=True)
     title = models.CharField(max_length=250)
-    description = models.TextField('Description', null=True, blank=True)
+    description = RichTextField('Description', null=True, blank=True)
     slug = models.SlugField(unique=True, max_length=250)
     tags = TaggableManager()
     created_at = models.DateTimeField('Created on', auto_now_add=True)

@@ -23,6 +23,22 @@ def home_view(request):
     }
     return render(request, 'home.html', context)
 
+def upload_view(request):
+    materials = Material.objects.all()
+    common_tags = Material.tags.most_common()[:4]
+    form = MaterialForm(request.POST)
+    if form.is_valid():
+        newmaterial = form.save(commit=False)
+        newmaterial.slug = slugify(newmaterial.title)
+        newmaterial.save()
+        form.save_m2m()
+    context = {
+        'materials':materials,
+        'common_tags':common_tags,
+        'form':form,
+    }
+    return render(request, 'upload.html', context)
+
 def detail_view(request, slug):
     material = get_object_or_404(Material, slug=slug)
     context = {

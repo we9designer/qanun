@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'taggit',
+    'ckeditor',
     'materials',
 ]
 
@@ -87,9 +88,9 @@ DATABASES = {
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'qanun_829139129jdf2d2',
-        'USER': 'paosidj9832uijasd-*/',
-        'PASSWORD': 'a-*s/asdasdasji',
+        'NAME': 'qanun_002',
+        'USER': 'qanun_002',
+        'PASSWORD': 'qanun_002',
         'HOST': 'localhost',
     }
 }
