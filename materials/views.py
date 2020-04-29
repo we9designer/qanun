@@ -7,7 +7,7 @@ from taggit.models import Tag
 from django.template.defaultfilters import slugify
 
 
-def home_view(request):
+def home_view_material(request):
     materials = Material.objects.all()
     common_tags = Material.tags.most_common()[:4]
     form = MaterialForm(request.POST)
@@ -23,7 +23,7 @@ def home_view(request):
     }
     return render(request, 'home.html', context)
 
-def upload_view(request):
+def upload_view_material(request):
     materials = Material.objects.all()
     common_tags = Material.tags.most_common()[:4]
     form = MaterialForm(request.POST)
@@ -39,14 +39,14 @@ def upload_view(request):
     }
     return render(request, 'upload.html', context)
 
-def detail_view(request, slug):
+def detail_view_material(request, slug):
     material = get_object_or_404(Material, slug=slug)
     context = {
         'material':material,
     }
     return render(request, 'detail.html', context)
 
-def tagged(request, slug):
+def tagged_material(request, slug):
     tag = get_object_or_404(Tag, slug=slug)
     common_tags = Material.tags.most_common()[:4]
     materials = Material.objects.filter(tags=tag)
@@ -56,3 +56,8 @@ def tagged(request, slug):
         'materials':materials,
     }
     return render(request, 'home.html', context)
+
+def landing(request):
+    context = {
+    }
+    return render(request, 'landing.html', context)    

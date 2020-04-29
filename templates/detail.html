@@ -3,7 +3,7 @@
 {% block content %}
 <h2>{{material.title}}</h2>
 {% for tag in material.tags.all %}
-Dərəcə: <a href="{% url 'tagged' tag.slug %}" class="badge badge-info" >{{ tag }}</a>
+Dərəcə: <a href="{% url 'tagged_material' tag.slug %}" class="badge badge-info" >{{ tag }}</a>
 {% endfor %}
 <p>{{material.description | safe}}</p>
 <p>{{material.created_at}}</p>

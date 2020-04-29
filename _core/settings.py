@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'taggit',
     'ckeditor',
     'materials',
+    'informatika',
 ]
 
 MIDDLEWARE = [
