@@ -15,7 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from materials.views import home_view, detail_view, tagged
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', home_view, name="home"),
+    path('material/<slug:slug>/', detail_view, name="material"),
+    path('category/<slug:slug>/', tagged, name="tagged"),
+    
+
 ]
