@@ -8,7 +8,7 @@ from django.template.defaultfilters import slugify
 
 
 def home_view_material(request):
-    materials = Material.objects.all()
+    materials = Material.objects.all().order_by('created_at')
     common_tags = Material.tags.most_common()[:4]
     form = MaterialForm(request.POST)
     if form.is_valid():
@@ -24,7 +24,7 @@ def home_view_material(request):
     return render(request, 'home.html', context)
 
 def upload_view_material(request):
-    materials = Material.objects.all()
+    materials = Material.objects.all().order_by('created_at')
     common_tags = Material.tags.most_common()[:4]
     form = MaterialForm(request.POST)
     if form.is_valid():
@@ -49,7 +49,7 @@ def detail_view_material(request, slug):
 def tagged_material(request, slug):
     tag = get_object_or_404(Tag, slug=slug)
     common_tags = Material.tags.most_common()[:4]
-    materials = Material.objects.filter(tags=tag)
+    materials = Material.objects.filter(tags=tag).order_by('created_at')
     context = {
         'tag':tag,
         'common_tags':common_tags,

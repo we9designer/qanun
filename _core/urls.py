@@ -18,6 +18,7 @@ from django.urls import path
 from materials.views import home_view_material, detail_view_material, tagged_material, upload_view_material, landing
 from informatika.views import home_view_informatika, detail_view_informatika, tagged_informatika, upload_view_informatika
 from azdili.views import home_view_azdili, detail_view_azdili, tagged_azdili, upload_view_azdili
+from mentiq.views import home_view_mentiq, detail_view_mentiq, tagged_mentiq, upload_view_mentiq
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -37,5 +38,10 @@ urlpatterns = [
     path('azerbaijan-dili/privatupload/', upload_view_azdili, name="privatupload_azdili"),
     path('azerbaijan-dili/azerbaijan-dili/<slug:slug>/', detail_view_azdili, name="azdili"),
     path('azerbaijan-dili/derece/<slug:slug>/', tagged_azdili, name="tagged_azdili"),
+    #Mentiq dili
+    path('mentiq/', home_view_mentiq, name="home_mentiq"),
+    path('mentiq/privatupload/', upload_view_mentiq, name="privatupload_mentiq"),
+    path('mentiq/mentiq/<slug:slug>/', detail_view_mentiq, name="mentiq"),
+    path('mentiq/derece/<slug:slug>/', tagged_mentiq, name="tagged_mentiq"),
 
 ]

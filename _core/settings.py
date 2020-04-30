@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'materials',
     'informatika',
     'azdili',
+    'mentiq',
 ]
 
 MIDDLEWARE = [

@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>{{mentiq.title}}</h2>
+Dərəcə: {% for tag in mentiq.tags.all %}
+<a href="{% url 'tagged_mentiq' tag.slug %}" class="badge badge-info" >{{ tag }}</a>
+{% endfor %}
+<p>{{mentiq.description | safe}}</p>
+{% endblock content %}        
