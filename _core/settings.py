@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'ckeditor',
     'materials',
     'informatika',
+    'azdili',
 ]
 
 MIDDLEWARE = [

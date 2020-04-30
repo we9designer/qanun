@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>{{azdili.title}}</h2>
+Dərəcə: {% for tag in azdili.tags.all %}
+<a href="{% url 'tagged_azdili' tag.slug %}" class="badge badge-info" >{{ tag }}</a>
+{% endfor %}
+<p>{{azdili.description | safe}}</p>
+{% endblock content %}        
