@@ -2,9 +2,8 @@
 
 {% block content %}
 <h2>{{informatika.title}}</h2>
-{% for tag in informatika.tags.all %}
-Dərəcə: <a href="{% url 'tagged_informatika' tag.slug %}" class="badge badge-info" >{{ tag }}</a>
+Dərəcə: {% for tag in informatika.tags.all %}
+<a href="{% url 'tagged_informatika' tag.slug %}" class="badge badge-info" >{{ tag }}</a>
 {% endfor %}
 <p>{{informatika.description | safe}}</p>
-<p>{{informatika.created_at}}</p>
 {% endblock content %}        
