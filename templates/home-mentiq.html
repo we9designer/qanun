@@ -1,33 +1,39 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
-        <div class="container pt-5">
-            <p>Dərəcə: 
+
+<div class="blog-single segments-page">
+    <div class="container">
+        <div class="tag">
+            <ul>
+                <li>Dərəcələr: </li>
                 {% for tag in common_tags %}
-                <a href="{% url 'tagged_mentiq' tag.slug %}" class="badge badge-success">{{tag}}</a>
-            {% endfor %}
-            </p>
-            <div class="row mb-2 posts">
-                    {% for mentiq in mentiqs %}
-                    <div class="col-md-6">
-                        <div class="cards">
-                            <div class="row no-gutters border rounded  flex-md-row mb-4 shadow-sm h-md-250">
-                                <div class="col p-4 d-flex flex-column position-static">
-                                    <h3 class="my-1"><a href="{% url 'mentiq' mentiq.slug %}">{{mentiq.title}}</a></h3>
-                                    <div style="display:flex">
-                                        {% for tag in mentiq.tags.all %}
-                                        <a href="{% url 'tagged_mentiq' tag.slug %}" class="mr-1 badge badge-info">#{{ tag }}</a>
-                                        {% endfor %}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>       
-                    </div>
-                    {% endfor %}
+                <li><a href="{% url 'tagged_mentiq' tag.slug %}">{{tag}}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="blog-single ">
+    <div class="container">
+        {% for mentiq in mentiqs %}
+        <div class="content border">
+            <div class="content-title">
+                <h1><a href="{% url 'mentiq' mentiq.slug %}">{{mentiq.title}}</a></h1>
             </div>
-        </div>    
-{% endblock content %}        
+            <div class="tag">
+                <ul>                    
+                <li>Dərəcə: </li>
+                {% for tag in mentiq.tags.all %}
+                    <li><a href="{% url 'tagged_mentiq' tag.slug %}">{{tag}}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
 
-
-
-
+{% endblock content %}

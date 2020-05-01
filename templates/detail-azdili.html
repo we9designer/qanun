@@ -6,4 +6,5 @@ Dərəcə: {% for tag in azdili.tags.all %}
 <a href="{% url 'tagged_azdili' tag.slug %}" class="badge badge-info" >{{ tag }}</a>
 {% endfor %}
 <p>{{azdili.description | safe}}</p>
+<img src="{{ mentiq.icon.url }}" alt="icon">
 {% endblock content %}        

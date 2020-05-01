@@ -6,4 +6,5 @@ Dərəcə: {% for tag in informatika.tags.all %}
 <a href="{% url 'tagged_informatika' tag.slug %}" class="badge badge-info" >{{ tag }}</a>
 {% endfor %}
 <p>{{informatika.description | safe}}</p>
+<img src="{{ mentiq.icon.url }}" alt="icon">
 {% endblock content %}        

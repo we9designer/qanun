@@ -1,9 +1,36 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block content %}
-<h2>{{material.title}}</h2>
-Dərəcə: {% for tag in material.tags.all %}
-<a href="{% url 'tagged_material' tag.slug %}" class="badge badge-info" >{{ tag }}</a>
-{% endfor %}
-<p>{{material.description | safe}}</p>
+
+<div class="blog-single segments-page">
+  <div class="container">
+    <div class="tag">
+      <ul>
+        <li>Dərəcələr: </li>
+        {% for tag in material.tags.all %}
+        <li><a href="{% url 'tagged_material' tag.slug %}">{{ tag }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="blog-single ">
+  <div class="container">
+    <div class="content-title">
+      <h1>{{material.title}}</h1>
+    </div>
+    <div class="tag">
+      <ul>
+        <li>Dərəcə: </li>
+        {% for tag in material.tags.all %}
+        <li><a href="{% url 'tagged_material' tag.slug %}">{{ tag }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="content-text">
+      <p> {{material.description | safe}} </p>
+    </div>
+  </div>
+</div>
+
 {% endblock content %}        

@@ -13,8 +13,9 @@ class Informatika(models.Model):
     tags = TaggableManager()
     created_at = models.DateTimeField('Created on', auto_now_add=True)
     update_at = models.DateTimeField('Updated', auto_now_add=True)
-    file = models.FileField('Archive', upload_to='upload/file/informatika', null=True, blank=True)
-    cover = models.ImageField('Cover', upload_to='upload/cover/informatika', null=True, blank=True)
+    file = models.FileField('Archive', upload_to='file/informatika', null=True, blank=True)
+    cover = models.ImageField('Cover', upload_to='cover/informatika', null=True, blank=True)
+    icon = models.ImageField('Icon', upload_to='icon/informatika', null=True, blank=True)
 
     def __str__(self):
         return self.title
