@@ -47,9 +47,9 @@ urlpatterns = [
     path('mentiq/<slug:slug>/', detail_view_mentiq, name="mentiq"),
     path('mentiq/derece/<slug:slug>/', tagged_mentiq, name="tagged_mentiq"),
     # Xeberler
-    path('blog/', home_view_xeber, name="home_xeber"),
-    path('blog/privatupload/', upload_view_xeber, name="privatupload_xeber"),
-    path('blog/<slug:slug>/', detail_view_xeber, name="xeber"),
-    path('blog/tag/<slug:slug>/', tagged_xeber, name="tagged_xeber"),
+    path('xeber/', home_view_xeber, name="home_xeber"),
+    path('xeber/privatupload/', upload_view_xeber, name="privatupload_xeber"),
+    path('xeber/<slug:slug>/', detail_view_xeber, name="xeber"),
+    path('xeber/tag/<slug:slug>/', tagged_xeber, name="tagged_xeber"),
 
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

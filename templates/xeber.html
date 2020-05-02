@@ -6,7 +6,7 @@
   <div class="container">
     <div class="tag">
       <ul>
-        <li>Dərəcələr: </li>
+        <li>Taglar: </li>
         {% for tag in xeber.tags.all %}
         <li><a href="{% url 'tagged_xeber' tag.slug %}">{{ tag }}</a></li>
         {% endfor %}
@@ -21,12 +21,13 @@
     </div>
     <div class="tag">
       <ul>
-        <li>Dərəcə: </li>
+        <li>Tag: </li>
         {% for tag in xeber.tags.all %}
         <li><a href="{% url 'tagged_xeber' tag.slug %}">{{ tag }}</a></li>
         {% endfor %}
       </ul>
     </div>
+    <p>{{xeber.created_at}}</p>
     <div class="content-text">
       <p> {{xeber.description | safe}} </p>
     </div>
