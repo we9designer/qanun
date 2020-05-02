@@ -21,6 +21,7 @@ from materials.views import home_view_material, detail_view_material, tagged_mat
 from informatika.views import home_view_informatika, detail_view_informatika, tagged_informatika, upload_view_informatika
 from azdili.views import home_view_azdili, detail_view_azdili, tagged_azdili, upload_view_azdili
 from mentiq.views import home_view_mentiq, detail_view_mentiq, tagged_mentiq, upload_view_mentiq
+from xeber.views import home_view_xeber, detail_view_xeber, tagged_xeber, upload_view_xeber
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -35,15 +36,20 @@ urlpatterns = [
     path('informatika/privatupload/', upload_view_informatika, name="privatupload_informatika"),
     path('informatika/<slug:slug>/', detail_view_informatika, name="informatika"),
     path('informatika/derece/<slug:slug>/', tagged_informatika, name="tagged_informatika"),
-    #Azərbaycan dili
+    # Azərbaycan dili
     path('azerbaijan-dili/', home_view_azdili, name="home_azdili"),
     path('azerbaijan-dili/privatupload/', upload_view_azdili, name="privatupload_azdili"),
     path('azerbaijan-dili/<slug:slug>/', detail_view_azdili, name="azdili"),
     path('azerbaijan-dili/derece/<slug:slug>/', tagged_azdili, name="tagged_azdili"),
-    #Mentiq dili
+    # Mentiq
     path('mentiq/', home_view_mentiq, name="home_mentiq"),
     path('mentiq/privatupload/', upload_view_mentiq, name="privatupload_mentiq"),
     path('mentiq/<slug:slug>/', detail_view_mentiq, name="mentiq"),
     path('mentiq/derece/<slug:slug>/', tagged_mentiq, name="tagged_mentiq"),
+    # Xeberler
+    path('blog/', home_view_xeber, name="home_xeber"),
+    path('blog/privatupload/', upload_view_xeber, name="privatupload_xeber"),
+    path('blog/<slug:slug>/', detail_view_xeber, name="xeber"),
+    path('blog/tag/<slug:slug>/', tagged_xeber, name="tagged_xeber"),
 
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

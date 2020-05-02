@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="blog-single segments-page">
+    <div class="container">
+        <div class="tag">
+            <ul>
+                <li>Taglar: </li>
+                {% for tag in common_tags %}
+                <li><a href="{% url 'tagged_xeber' tag.slug %}">{{tag}}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="blog-single ">
+    <div class="container ">
+        {% for xeber in xebers %}
+        <div class="content border">
+            <div class="content-title">
+                <h1><a href="{% url 'xeber' xeber.slug %}">{{xeber.title}}</a></h1>
+            </div>
+            <div class="tag">
+                <ul>
+                <li>Tag: </li>
+                {% for tag in xeber.tags.all %}
+                    <li><a href="{% url 'xeber' tag.slug %}">{{tag}}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock content %}
+
+
+
