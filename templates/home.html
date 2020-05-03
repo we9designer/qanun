@@ -21,7 +21,7 @@
         {% for material in materials %}
         <div class="content border">
             <div class="content-title">
-                <h1><a href="{% url 'material' material.slug %}">{{material.title}}</a></h1>
+                <h1><a href="{% url 'material' material.slug %}">{{material.title|truncatechars:45}}</a></h1>
             </div>
             <div class="tag">
                 <ul>
