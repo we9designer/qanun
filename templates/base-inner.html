@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="az">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="{% static 'assets/images/favicon.png' %}">
+	<title>Qanun</title>
+	<link rel="stylesheet" href="{% static 'assets/css/materialize.css' %}">
+	<link rel="stylesheet" href="{% static 'assets/css/loaders.css' %}">
+	<link rel="stylesheet" href="{% static 'assets/css/lightbox.css' %}">
+	<link rel="stylesheet" href="{% static 'assets/css/font-awesome.min.css' %}">
+	<link rel="stylesheet" href="{% static 'assets/css/owl.carousel.min.css' %}">
+	<link rel="stylesheet" href="{% static 'assets/css/owl.theme.default.min.css' %}">
+	<link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+
+</head>
+<body>	
+    {% block content %}{% endblock content %}
+	<!-- footer -->
+	<footer>
+		<div class="container">
+			<div class="wrap-logo">
+				<h3><img src="{% static 'assets/images/logo.png' %}" alt="">Qanun</h3>
+			</div>
+			<div class="wrap-info">
+				<ul>
+					<li>Şikayət və təkliflərinizi bildirə bilərsiniz.</li>
+					<li>+994 55 291 55 25</li>
+					<li>samed.sadixov@mail.ru</li>
+				</ul>
+			</div>
+			<div class="wrap-social">
+				<ul>
+					<li><a href=""><i class="fab fa-facebook-f"></i></a></li>
+					<li><a href=""><i class="fab fa-instagram"></i></a></li>
+					<li><a href=""><i class="fab fa-google"></i></a></li>
+					<li><a href=""><i class="fab fa-youtube"></i></a></li>
+				</ul>
+			</div>
+			<div class="footer-text">
+				<p>Copyright © Hüquqlar qorunur.</p>
+			</div>
+		</div>
+	</footer>
+	<!-- end footer -->
+	<script src="{% static 'assets/js/jquery.min.js' %}"></script>
+	<script src="{% static 'assets/js/materialize.js' %}"></script>
+	<script src="{% static 'assets/js/owl.carousel.min.js' %}"></script>
+	<script src="{% static 'assets/js/main.js' %}"></script>
+</body>
+</html>
